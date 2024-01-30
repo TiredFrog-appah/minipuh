@@ -40,6 +40,7 @@ int main()
 		if (sigaction(SIGUSR1, &action, NULL) < 0 
 			|| sigaction(SIGUSR2, &action, NULL) < 0)
 				return(write(2, "ERROR\n" , 6));
+		usleep(500);
 	}
     return 0;
 }

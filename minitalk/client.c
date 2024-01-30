@@ -9,9 +9,9 @@ void	send_sig(char n, pid_t receiver_pid)
 	while (i >= 0)
 	{
 		if ((n >> i--) & 1)
-		{kill(receiver_pid, SIGUSR2); usleep(100);}
+		{kill(receiver_pid, SIGUSR2); usleep(500);}
 		else 
-		{kill(receiver_pid, SIGUSR1); usleep(100);}
+		{kill(receiver_pid, SIGUSR1); usleep(500);}
 	}
 }
 
@@ -49,36 +49,3 @@ int main(int c, char **v)
 	}
     return 0;
 }
-
-
-// void send_oi(int *b, pid_t receiver_pid)
-// {
-// 	int i = 8;
-// 	while (i >= 0)
-// 	{
-// 		// printf("%d\n",b[i]);
-// 		if (b[i] == 1){
-//     		kill(receiver_pid, SIGUSR2);usleep(100);}
-// 		else {
-// 			kill(receiver_pid, SIGUSR1);usleep(100);}
-// 		i--;
-// 	}
-// 	free(b);
-// }
-// int *binary(unsigned char n)
-// {
-// 	int *b;
-// 	b = calloc(8,4);
-// 	int i = 0;
-// 	while (n)
-// 	{
-// 		b[i++] = n % 2;
-// 		n = n / 2;
-// 	}
-// 	return (b);
-// }
-
-// ft1 = string(loop -> chaR);
-// ft2 = char -> ( i = 7 ) ==> c >> i & 1
-//10101010
-// if bit == 0 (SIGUSR1) : 1(SIGUSR2) 
